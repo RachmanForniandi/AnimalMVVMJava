@@ -9,18 +9,18 @@
         android:id="@+id/listDataFragment"
         android:name="com.example.animalmvvmjavaapp.views.ListDataFragment"
         android:label="fragment_list_data"
-        tools:layout="@layout/fragment_list_data" >
+        tools:layout="@layout/fragment_list_data">
         <action
-            android:id="@+id/action_listDataFragment_to_detailFragment"
+            android:id="@+id/actionGoToDetails"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.animalmvvmjavaapp.views.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_detail">
         <action
-            android:id="@+id/action_detailFragment_to_listDataFragment"
+            android:id="@+id/actionGoToList"
             app:destination="@id/listDataFragment" />
     </fragment>
 </navigation>
