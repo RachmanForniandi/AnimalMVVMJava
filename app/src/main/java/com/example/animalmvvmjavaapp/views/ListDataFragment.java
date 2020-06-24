@@ -20,8 +20,8 @@ import butterknife.ButterKnife;
 
 public class ListDataFragment extends Fragment {
 
-    @BindView(R.id.fab_1)
-    FloatingActionButton listFab;
+    /*@BindView(R.id.fab_1)
+    FloatingActionButton listFab;*/
 
     public ListDataFragment() {
         // Required empty public constructor
@@ -39,9 +39,9 @@ public class ListDataFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        listFab.setOnClickListener(view1 -> {
+        /*listFab.setOnClickListener(view1 -> {
             NavDirections navDirections = ListDataFragmentDirections.actionGoToDetails();
             Navigation.findNavController(view1).navigate(navDirections);
-        });
+        });*/
     }
 }

@@ -8,7 +8,7 @@
     tools:context=".views.MainActivity">
 
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/fragment2"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
