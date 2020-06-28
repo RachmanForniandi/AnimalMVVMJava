@@ -63,6 +63,7 @@ public class ListDataFragment extends Fragment {
         listViewModel.animals.observe(getViewLifecycleOwner(), animals -> {
             if (animals != null){
                 animalList.setVisibility(View.VISIBLE);
+                txtError.setVisibility(View.GONE);
                 animalAdapter.updateAnimalList(animals);
             }
         });
@@ -80,7 +81,7 @@ public class ListDataFragment extends Fragment {
         });
 
         listViewModel.setDummyData();
-        
+
         if (animalList != null){
            animalList.setLayoutManager(new GridLayoutManager(getActivity(),2));
            animalList.setAdapter(animalAdapter);
