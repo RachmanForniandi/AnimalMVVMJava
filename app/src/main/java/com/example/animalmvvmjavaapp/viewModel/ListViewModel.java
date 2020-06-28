@@ -1,13 +1,14 @@
 package com.example.animalmvvmjavaapp.viewModel;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.example.animalmvvmjavaapp.model.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListViewModel {
+public class ListViewModel extends ViewModel {
 
     public MutableLiveData<List<Animal>> animals = new MutableLiveData<List<Animal>>();
     public MutableLiveData<Boolean> loadError = new MutableLiveData<Boolean>();
