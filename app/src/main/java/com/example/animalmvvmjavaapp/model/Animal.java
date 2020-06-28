@@ -1,5 +1,7 @@
 package com.example.animalmvvmjavaapp.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Animal {
 
     public String name;
@@ -7,7 +9,11 @@ public class Animal {
     public String location;
     public Speed speed;
     public String diet;
+
+    @SerializedName("lifespan")
     public String lifeSpan;
+
+    @SerializedName("image")
     public String imgUrl;
 
     public Animal(String name){
