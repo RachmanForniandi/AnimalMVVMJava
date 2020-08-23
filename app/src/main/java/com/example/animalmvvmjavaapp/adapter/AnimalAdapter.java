@@ -8,9 +8,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.example.animalmvvmjavaapp.R;
 import com.example.animalmvvmjavaapp.model.Animal;
+import com.example.animalmvvmjavaapp.utility.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +39,13 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalHold
 
     @Override
     public void onBindViewHolder(@NonNull AnimalAdapter.AnimalHolder holder, int position) {
-        //final Animal animal = animalList.get(position);
+        final Animal animal = animalList.get(position);
 
         //holder.txtAnimalName.setText(animalList.get(position).name);
-        TextView animalName = holder.itemView.findViewById(R.id.txt_animal_name);
-        animalName.setText(animalList.get(position).name);
+        //TextView animalName = holder.itemView.findViewById(R.id.txt_animal_name);
+        holder.txtAnimalName.setText(animal.getName());
+        //ImageLoader.loadImage(holder.imgAnimal,animal.getImgUrl(),new CircularProgressDrawable(holder.imgAnimal.getContext()));
+        ImageLoader.loadImage(holder.imgAnimal,animal.getImgUrl(),ImageLoader.getProgressDrawable(holder.imgAnimal.getContext()));
     }
 
     @Override
@@ -51,7 +55,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalHold
 
     public class AnimalHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.img_animal)ImageView imgAnimal;
-        //@BindView(R.id.txt_animal_name) TextView txtAnimalName;
+        @BindView(R.id.txt_animal_name) TextView txtAnimalName;
 
         public AnimalHolder(@NonNull View itemView) {
 
